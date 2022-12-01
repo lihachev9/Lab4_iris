@@ -32,7 +32,7 @@ def cluster2label(y, y_pred):
     return y_pred
 
 y_true = pd.read_csv('iris.data', header=None).pop(4)
-y_pred = pd.read_csv('predict.txt', header=None)
+y_pred = pd.read_csv('predict.txt', header=None)[0]
 y_true = LabelEncoder().fit_transform(y_true)
 
 y_pred = cluster2label(y_true, y_pred)
